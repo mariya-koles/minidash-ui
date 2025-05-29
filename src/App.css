@@ -1,0 +1,22 @@
+/* Base widget styles */
+.widget {
+  border-radius: 8px;
+  padding: 12px;
+  height: 100%;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Widget header bar (shared) */
+.widget-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  cursor: move;
+}
+
+/* Crypto-specific widget */
+.crypto-widget {
+  background-color: #102a43; /* dark blue */
+}
