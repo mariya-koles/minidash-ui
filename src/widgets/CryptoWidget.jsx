@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../api/axiosInstance';
+import { MdAttachMoney } from 'react-icons/md';
 
 const CryptoWidget = () => {
     const [coins, setCoins] = useState([]);
@@ -19,7 +20,10 @@ const CryptoWidget = () => {
 
     return (
         <div className="widget crypto-widget">
-            <div className="widget-header">Top Crypto</div>
+            <div className="widget-header">
+                <div className="widget-title">Top Crypto</div>
+                <div className="widget-icon"><MdAttachMoney/></div>
+            </div>
             <div className="widget-content">
                 {error && <p>{error}</p>}
                 {!error && coins.length === 0 && <p>Loading...</p>}

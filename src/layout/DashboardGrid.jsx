@@ -20,6 +20,9 @@ const DashboardGrid = () => {
             rowHeight={150}
             width={1200}
             draggableHandle=".widget-header"
+            isDraggable={true}
+            isResizable={true}
+            useCSSTransforms={true}
         >
             <div key="crypto"><CryptoWidget /></div>
             <div key="weather"><WeatherWidget /></div>

@@ -1,3 +1,29 @@
+/* Base APP layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  padding: 0 0 0 0;
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.app-main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.layout {
+  width: 100%;
+}
+
+
+
 /* Base widget styles */
 .widget {
   border-radius: 8px;
@@ -10,10 +36,35 @@
 
 /* Widget header bar (shared) */
 .widget-header {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
   cursor: move;
+  padding: 0 4px;
+}
+
+
+.widget-title {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.widget-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.widget-content ul {
+  padding-left: 1.2rem;
+}
+
+.widget-content li {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Crypto-specific widget */
