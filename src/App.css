@@ -71,3 +71,80 @@
 .crypto-widget {
   background-color: #102a43; /* dark blue */
 }
+
+.news-widget {
+  background-color: #1e293b; /* slate blue/gray */
+}
+
+/* News-specific widget */
+.news-widget a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.news-widget a:hover {
+  text-decoration: underline;
+}
+
+.news-search {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.news-search input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.news-search button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.news-widget {
+  background-color: #1e293b;
+}
+
+.news-widget a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.news-widget a:hover {
+  text-decoration: underline;
+}
+
+
+/* Weather-specific widget */
+.weather-widget {
+  background-color: #1a2e3b;
+}
+
+.weather-search {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.weather-search input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.weather-search button {
+  background-color: #38bdf8;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
