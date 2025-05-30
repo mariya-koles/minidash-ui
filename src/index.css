@@ -25,10 +25,14 @@ a:hover {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
-  display: flex;
-  place-items: center;
+  background-color: #00152d;
   min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 

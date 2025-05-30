@@ -6,9 +6,9 @@
 }
 
 .app-header {
-  padding: 0 0 0 0;
+  padding: 0 0 0 20px;
   margin: 0;
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: 2.5rem;
 }
@@ -18,20 +18,90 @@
   padding: 20px;
 }
 
+/* Grid Layout Styles */
+.grid-container {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
 .layout {
+  min-height: 100%;
   width: 100%;
 }
 
+/* React Grid Layout specific styles */
+.react-grid-layout {
+  position: relative;
+}
 
+.react-grid-item {
+  transition: all 200ms ease;
+  transition-property: left, top;
+  border-radius: 8px;
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  cursor: se-resize;
+  z-index: 10;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  content: '';
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0.2;
+  transition-duration: 100ms;
+  z-index: 2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.react-grid-item.react-draggable-dragging {
+  transition: none;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.react-grid-item.resizing {
+  opacity: 0.6;
+  z-index: 3;
+}
 
 /* Base widget styles */
 .widget {
   border-radius: 8px;
   padding: 12px;
   height: 100%;
+  width: 100%;
   overflow: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Widget header bar (shared) */
@@ -43,8 +113,8 @@
   margin-bottom: 12px;
   cursor: move;
   padding: 0 4px;
+  flex-shrink: 0;
 }
-
 
 .widget-title {
   flex-grow: 1;
@@ -52,14 +122,19 @@
   font-weight: bold;
 }
 
-
 .widget-icon {
   font-size: 1.5rem;
   color: white;
 }
 
+.widget-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
 .widget-content ul {
   padding-left: 1.2rem;
+  margin: 0;
 }
 
 .widget-content li {
@@ -67,16 +142,43 @@
   line-height: 1.6;
 }
 
+/* Scrollbar Styling */
+/* For WebKit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.08); /* nearly invisible white */
+  border-radius: 4px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+}
+
+/* Optional: on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
 /* Crypto-specific widget */
 .crypto-widget {
   background-color: #102a43; /* dark blue */
 }
 
+
+/* News-specific widget */
 .news-widget {
   background-color: #1e293b; /* slate blue/gray */
 }
 
-/* News-specific widget */
 .news-widget a {
   color: #93c5fd;
   text-decoration: none;
@@ -89,6 +191,7 @@
 .news-search {
   display: flex;
   margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .news-search input {
@@ -108,20 +211,6 @@
   cursor: pointer;
 }
 
-.news-widget {
-  background-color: #1e293b;
-}
-
-.news-widget a {
-  color: #93c5fd;
-  text-decoration: none;
-}
-
-.news-widget a:hover {
-  text-decoration: underline;
-}
-
-
 /* Weather-specific widget */
 .weather-widget {
   background-color: #1a2e3b;
@@ -130,6 +219,7 @@
 .weather-search {
   display: flex;
   margin-bottom: 10px;
+  flex-shrink: 0;
 }
 
 .weather-search input {
@@ -147,4 +237,33 @@
   padding: 6px 10px;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .widget-header {
+    font-size: 1.2rem;
+  }
+  
+  .widget-content li {
+    font-size: 1rem;
+  }
+  
+  .grid-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .widget-header {
+    font-size: 1rem;
+  }
+  
+  .widget-content li {
+    font-size: 0.9rem;
+  }
+  
+  .app-header {
+    font-size: 2rem;
+  }
 }

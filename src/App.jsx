@@ -1,4 +1,4 @@
-import DashboardGrid from './layout/DashboardGrid';
+import ResponsiveGridLayoutComponent from './layout/ResponsiveGridLayout';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
                 <h1>MiniDash</h1>
             </header>
             <main className="app-main">
-                <DashboardGrid />
+                <ResponsiveGridLayoutComponent />
             </main>
         </div>
     );
